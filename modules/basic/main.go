@@ -1,17 +1,20 @@
 package main
 
 import (
+	"basic/example"
 	"fmt"
 
 	"github.com/samber/lo"
 )
 
+func exampleUseLibrary(values *[]uint32) uint32 {
+	return lo.Sum(*values)
+}
+
 func main() {
-	list := []uint32{1, 2, 3, 4, 5}
-
-	sum := lo.Reduce(list, func(acc uint32, item uint32, index int) uint32 {
-		return acc + item
-	}, 0)
-
+	sum := exampleUseLibrary(&[]uint32{1, 2, 3, 4, 5})
 	fmt.Printf("sum: %d\n", sum)
+
+	foo := example.NewFoo("World")
+	fmt.Println(foo.Greet())
 }
