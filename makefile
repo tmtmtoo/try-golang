@@ -20,3 +20,9 @@ test: ## Test all Go modules
 
 clean: ## Clean all Go modules
 	$(call run-go-command,Cleaning,go clean ./...)
+
+add-migration: ## Create a new database migration. Usage: make add-migration name=<migration_name>
+	@migrate create -ext sql -dir migrations -seq $(name)
+
+migrate: ## Apply all up database migrations
+	@migrate -path migrations -database "$(DATABASE_URL)" up
