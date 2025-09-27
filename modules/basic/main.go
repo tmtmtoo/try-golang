@@ -2,6 +2,16 @@ package main
 
 import (
 	"basic/example"
+	"basic/nesting"
+	"basic/nesting/nested"
+	"basic/protecting"
+
+	// Alias to avoid name conflict
+	nested2 "basic/protecting/nested"
+
+	// Inaccessible due to internal directory
+	// "basic/protecting/internal/protected"
+
 	"fmt"
 
 	"github.com/samber/lo"
@@ -17,4 +27,20 @@ func main() {
 
 	foo := example.NewFoo("World")
 	fmt.Println(foo.Greet())
+
+	nestingString := nesting.ExampleNestingFunction()
+	fmt.Println(nestingString)
+
+	nestedString := nested.ExampleNestedFunction()
+	fmt.Println(nestedString)
+
+	protectingString := protecting.ExampleProtectingFunction()
+	fmt.Println(protectingString)
+
+	// Inaccessible due to internal directory
+	// protected := protected.ExampleProtectedFunction()
+	// fmt.Println(protected)
+
+	nested2String := nested2.ExampleNestedFunction2()
+	fmt.Println(nested2String)
 }
