@@ -1,12 +1,12 @@
 package foo
 
 import (
-	"repository_pattern/domain/foo"
+	"repository_pattern/domain/primitives"
 
 	"gorm.io/gorm"
 )
 
-func (g *Gateway) DeleteFoo(id foo.Id) error {
+func (g *Gateway) DeleteFoo(id primitives.Id) error {
 	return g.conn.Transaction(func(tx *gorm.DB) error {
 		fooID := id.Bytes()
 

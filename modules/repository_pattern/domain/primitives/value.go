@@ -1,4 +1,4 @@
-package foo
+package primitives
 
 import "github.com/google/uuid"
 

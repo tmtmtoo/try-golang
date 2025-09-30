@@ -2,11 +2,12 @@ package foo
 
 import (
 	"repository_pattern/domain/foo"
+	"repository_pattern/domain/primitives"
 
 	"github.com/google/uuid"
 )
 
-func (g *Gateway) FindFooById(id foo.Id) (*foo.Foo, error) {
+func (g *Gateway) FindFooById(id primitives.Id) (*foo.Foo, error) {
 	var fooDto fooDto
 	if err := g.conn.First(&fooDto, "id = ?", uuid.UUID(id)).Error; err != nil {
 		return nil, err

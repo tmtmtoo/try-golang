@@ -1,7 +1,9 @@
 package foo
 
+import "repository_pattern/domain/primitives"
+
 type FindFooById interface {
-	FindFooById(id Id) (*Foo, error)
+	FindFooById(id primitives.Id) (*Foo, error)
 }
 
 type SaveFoo interface {
@@ -9,5 +11,5 @@ type SaveFoo interface {
 }
 
 type DeleteFoo interface {
-	DeleteFoo(id Id) error
+	DeleteFoo(id primitives.Id) error
 }
