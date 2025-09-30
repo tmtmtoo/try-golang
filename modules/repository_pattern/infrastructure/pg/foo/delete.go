@@ -1,7 +1,7 @@
 package foo
 
 import (
-	"repos/domain/foo"
+	"repository_pattern/domain/foo"
 
 	"gorm.io/gorm"
 )

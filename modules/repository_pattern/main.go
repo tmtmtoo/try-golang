@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	foo_domain "repos/domain/foo"
-	foo_repository "repos/infrastructure/pg/foo"
+	foo_domain "repository_pattern/domain/foo"
+	foo_repository "repository_pattern/infrastructure/pg/foo"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

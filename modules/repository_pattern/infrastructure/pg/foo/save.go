@@ -2,7 +2,7 @@ package foo
 
 import (
 	"errors"
-	"repos/domain/foo"
+	"repository_pattern/domain/foo"
 
 	"github.com/google/uuid"
 	"gorm.io/gorm"
