@@ -4,6 +4,10 @@ import "github.com/google/uuid"
 
 type Id [16]byte
 
+func NewId(bytes [16]byte) Id {
+	return Id(bytes)
+}
+
 func GenerateId() Id {
 	return Id(uuid.New())
 }

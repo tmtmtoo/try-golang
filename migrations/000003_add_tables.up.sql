@@ -5,8 +5,8 @@ create table hoge (
 
 create table cancelled_hoge (
     id uuid primary key,
-    value text not null,
-    cancelled_at timestamp not null,
+    reason text not null,
+    cancelled_at timestamp not null default current_timestamp,
 
     constraint fk_hoge foreign key (id) references hoge(id)
 );
@@ -18,9 +18,8 @@ create table piyo (
 
 create table processed_hoge (
     id uuid primary key,
-    value text not null,
     piyo_id uuid not null,
-    processed_at timestamp not null,
+    processed_at timestamp not null default current_timestamp,
 
     constraint fk_hoge foreign key (id) references hoge(id),
     constraint fk_piyo foreign key (piyo_id) references piyo(id)
