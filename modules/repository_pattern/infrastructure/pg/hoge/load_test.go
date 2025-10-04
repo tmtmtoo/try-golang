@@ -11,35 +11,6 @@ import (
 	"gorm.io/gorm"
 )
 
-func TestXx(t *testing.T) {
-	ctx := context.Background()
-
-	container, err := pg.WithPostgresContainer(ctx, "./load.fixture.sql", t)
-	if err != nil {
-		t.Fatalf("failed to start postgres container: %v", err)
-	}
-	defer container.Terminate()
-
-	conn, err := gorm.Open(postgres.Open(container.DSN), &gorm.Config{})
-	if err != nil {
-		t.Fatalf("failed to connect to postgres: %v", err)
-	}
-
-	repository := NewGateway(conn)
-
-	id, err := primitives.ParseIdString("00000000-0000-0000-0000-000000000003")
-	if err != nil {
-		t.Fatalf("failed to parse id: %v", err)
-	}
-
-	hoge, err := repository.LoadHoge(id)
-	if err != nil {
-		t.Fatalf("failed to load hoge: %v", err)
-	}
-
-	t.Log(hoge)
-}
-
 func TestLoadHoge(t *testing.T) {
 	tests := []struct {
 		name   string
