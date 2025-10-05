@@ -6,4 +6,7 @@ use (
 	./modules/caller
 	./modules/custom_error
 	./modules/repository_pattern
+	./modules/http_server
+	./modules/log
+	./modules/otel
 )
