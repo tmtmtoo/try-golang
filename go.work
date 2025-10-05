@@ -4,5 +4,6 @@ use (
 	./modules/basic
 	./modules/callee
 	./modules/caller
+	./modules/custom_error
 	./modules/repository_pattern
 )
