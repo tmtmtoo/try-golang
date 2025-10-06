@@ -7,6 +7,6 @@ use (
 	./modules/custom_error
 	./modules/repository_pattern
 	./modules/http_server
-	./modules/log
+	./modules/slog
 	./modules/otel
 )
