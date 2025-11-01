@@ -5,8 +5,9 @@ use (
 	./modules/callee
 	./modules/caller
 	./modules/custom_error
-	./modules/repository_pattern
 	./modules/http_server
-	./modules/slog
 	./modules/otel
+	./modules/repository_pattern
+	./modules/slog
+	./modules/visitor
 )
